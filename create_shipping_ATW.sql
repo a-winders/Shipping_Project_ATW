@@ -1,10 +1,6 @@
 DROP DATABASE IF EXISTS shipping;
-
 CREATE DATABASE shipping;
-
 USE shipping;
-
-
 /* -------------------
 		  DDL 
 (CREATE, ALTER, DROP, TRUNCATE, COMMENT, RENAME)
@@ -23,10 +19,10 @@ CREATE TABLE ship
  displacement_in_tons VARCHAR (20),
  crewNum INT,
  buildYear YEAR,
- -- containerNum INT, 	/* commented out because it does not create properly - still not sure why */
+ containerID INT, 	
  PRIMARY KEY (shipName),
+ FOREIGN KEY (containerID) REFERENCES container(containerID),
  FOREIGN KEY (portName, city) REFERENCES port(portName, city));
- -- FOREIGN KEY (containerID) REFERENCES container(containerID));
 
 CREATE TABLE container
  (containerID INT,
@@ -37,18 +33,3 @@ CREATE TABLE container
  shipName VARCHAR(30),
  PRIMARY KEY (containerID),
  FOREIGN KEY (shipName) REFERENCES ship(shipName));
- 
-
-
-
-
-
-
-
-
- 
-
- 
-
- 
- 
