@@ -56,9 +56,6 @@ VALUES
 ('Pequod', 'Cpt. Ahab', 'Port of Tokyo', 'Tokyo',  13000, 9, 1951);
 
 
-SELECT *
-FROM ship;
-
 /* container */
 INSERT INTO container
 VALUES	
